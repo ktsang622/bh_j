@@ -24,14 +24,14 @@ export async function PUT(
 
     const result = await query(
       `UPDATE behaviour_entries SET
-        event_date = COALESCE($1, event_date),
-        trigger = COALESCE($2, trigger),
-        behaviour = COALESCE($3, behaviour),
-        intensity = COALESCE($4, intensity),
-        duration_minutes = COALESCE($5, duration_minutes),
-        resolution = COALESCE($6, resolution),
-        outcome = COALESCE($7, outcome),
-        notes = COALESCE($8, notes)
+        event_date = $1,
+        trigger = $2,
+        behaviour = $3,
+        intensity = $4,
+        duration_minutes = $5,
+        resolution = $6,
+        outcome = $7,
+        notes = $8
       WHERE id = $9
       RETURNING *`,
       [
