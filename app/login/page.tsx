@@ -27,14 +27,17 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (!response.ok) {
+        console.error('Login failed:', data);
         setError(data.error || 'Login failed');
         return;
       }
 
+      console.log('Login successful:', data);
       router.push('/kids');
       router.refresh();
     } catch (err) {
-      setError('An error occurred during login');
+      console.error('Login error:', err);
+      setError('An error occurred during login: ' + (err instanceof Error ? err.message : String(err)));
     } finally {
       setLoading(false);
     }
