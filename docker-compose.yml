@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: behavior_journal_db
+    environment:
+      POSTGRES_USER: behavior_user
+      POSTGRES_PASSWORD: behavior_pass
+      POSTGRES_DB: behavior_journal
+    ports:
+      - "15432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./init-db.sql:/docker-entrypoint-initdb.d/02-init-data.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U behavior_user -d behavior_journal"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: behavior_journal_app
+    environment:
+      DATABASE_URL: postgresql://behavior_user:behavior_pass@postgres:5432/behavior_journal
+      JWT_SECRET: your-secret-key-change-in-production
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
