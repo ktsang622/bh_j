@@ -20,7 +20,16 @@ A simple web application to record children's behavioural incidents for emotiona
 - **Styling**: Tailwind CSS v4
 - **Deployment**: Docker & Docker Compose
 
-## Quick Start
+## 🚀 Deployment Guides
+
+Choose the guide that fits your needs:
+
+- **[SIMPLE-DEPLOY.md](./SIMPLE-DEPLOY.md)** ⭐ **Recommended** - Docker Compose only (no Node.js needed!)
+- **[DEPLOY-CHEATSHEET.md](./DEPLOY-CHEATSHEET.md)** - One-page quick reference
+- **[LIGHTSAIL-FROM-SCRATCH.md](./LIGHTSAIL-FROM-SCRATCH.md)** - Complete step-by-step from fresh server
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Comprehensive deployment guide
+
+## Quick Start (Local Development)
 
 ### Prerequisites
 
