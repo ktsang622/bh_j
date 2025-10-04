@@ -13,9 +13,9 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    event_date:
-      entry?.event_date?.slice(0, 16) ||
-      new Date().toISOString().slice(0, 16),
+    event_date: entry?.event_date
+      ? new Date(entry.event_date).toISOString().slice(0, 16)
+      : new Date().toISOString().slice(0, 16),
     trigger: entry?.trigger || '',
     behaviour: entry?.behaviour || '',
     intensity: entry?.intensity || '',
