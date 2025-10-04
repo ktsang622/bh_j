@@ -33,8 +33,8 @@ export default function LoginPage() {
       }
 
       console.log('Login successful:', data);
-      router.push('/kids');
-      router.refresh();
+      // Use window.location to ensure cookie is sent with next request
+      window.location.href = '/kids';
     } catch (err) {
       console.error('Login error:', err);
       setError('An error occurred during login: ' + (err instanceof Error ? err.message : String(err)));
