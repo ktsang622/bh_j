@@ -147,17 +147,17 @@ export default async function EntriesPage({
                         Recorded by {entry.username}
                       </div>
                     </div>
-                    {session.role === 'admin' && (
-                      <div className="ml-4 flex-shrink-0 flex gap-2">
-                        <Link
-                          href={`/kids/${id}/entries/${entry.id}/edit`}
-                          className="text-indigo-600 hover:text-indigo-900 text-sm font-medium"
-                        >
-                          Edit
-                        </Link>
+                    <div className="ml-4 flex-shrink-0 flex gap-2">
+                      <Link
+                        href={`/kids/${id}/entries/${entry.id}/edit`}
+                        className="text-indigo-600 hover:text-indigo-900 text-sm font-medium"
+                      >
+                        Edit
+                      </Link>
+                      {session.role === 'admin' && (
                         <DeleteButton entryId={entry.id} kidId={id} />
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}

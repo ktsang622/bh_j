@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
-import { requireAdmin } from '@/lib/auth';
+import { requireAuth } from '@/lib/auth';
 
 export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    await requireAdmin();
+    const user = await requireAuth(); // Allow all authenticated users to edit
 
     const { id } = await params;
     const body = await request.json();

@@ -10,8 +10,8 @@ export default async function EditEntryPage({
 }) {
   const session = await getSession();
 
-  if (!session || session.role !== 'admin') {
-    redirect('/kids');
+  if (!session) {
+    redirect('/login');
   }
 
   const { id, entryId } = await params;
