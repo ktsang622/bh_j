@@ -77,8 +77,8 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, event_date: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px]"
-            style={{ WebkitAppearance: 'none', appearance: 'none' }}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
+            style={{ WebkitAppearance: 'none', appearance: 'none', colorScheme: 'light' }}
             required
           />
         </div>
