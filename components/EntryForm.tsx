@@ -96,7 +96,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, trigger: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
           >
             <option value="">Select trigger</option>
             {TRIGGERS.map((trigger) => (
@@ -120,7 +120,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, behaviour: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
           >
             <option value="">Select behaviour</option>
             {BEHAVIOURS.map((behaviour) => (
@@ -144,7 +144,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, intensity: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
           >
             <option value="">Select intensity</option>
             {INTENSITIES.map((intensity) => (
@@ -169,7 +169,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, duration_minutes: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
             min="0"
           />
         </div>
@@ -188,7 +188,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
               setFormData({ ...formData, resolution: e.target.value })
             }
             rows={3}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 text-gray-900"
           />
         </div>
 
@@ -205,7 +205,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
             onChange={(e) =>
               setFormData({ ...formData, outcome: e.target.value })
             }
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 min-h-[44px] text-gray-900"
           >
             <option value="">Select outcome</option>
             {OUTCOMES.map((outcome) => (
@@ -230,7 +230,7 @@ export default function EntryForm({ kidId, entry }: EntryFormProps) {
               setFormData({ ...formData, notes: e.target.value })
             }
             rows={4}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border p-2"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm md:text-base border p-2 text-gray-900"
           />
         </div>
       </div>
